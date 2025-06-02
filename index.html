@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SetUP accesorios y periféricos gamers" />
+  <meta
+    name="keywords"
+    content="gamer, periféricos, componentes, pc, gráficas, ram, gabinete, rgb, mouse, teclado, mecánico, auriculares"
+  />
+  <meta name="author" content="Santiago Rodriguez" />
+  <title>Ruca Aluminé - Depto intendencia</title>
+  <link rel="icon" type="image" href="./img/logo.ruca.png" />
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img class="Logo" src="./img/logo.ruca.png" alt="Logo ruca">
+            <h2 class="p-2 fs-3 text-white bg-warning">Departamento de intendencia</h2>
+            <nav>
+                <ul>
+                    <li><a class="text-decoration-none" href="#inicio">Inicio</a></li>
+                    <li><a class="text-decoration-none" href="#solicitar">Solicitar Recursos</a></li>
+                    <li><a class="text-decoration-none" href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="container">
+                <h1>Facilitando el Pedidos de Elementos</h1>
+                <p>Bienvenido a la plataforma de solicitud de elementos de Ruca Aluminé. Haz tus pedidos de forma rápida y sencilla.</p>
+                <a href="#solicitar" class="btn-orange text-decoration-none ">Realizar Pedido</a>
+            </div>
+        </section>
+
+        <section id="solicitar" class="solicitar-recursos">
+            <h2>Organizador</h2>
+            <p>Completa el siguiente formulario para enviarnos tu solicitud. Nos pondremos en contacto contigo a la brevedad.</p>
+            <div class="row">
+            <div class="row">
+                <div class=" col-6 container bg-secondary-subtle">
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="nombreAgrupacion">Agrupación:</label>
+                            <select name="nombreAgrupacion" id="nombreAgrupacion" required>
+                                
+                                <option value=""> Por favor, elige para quien es el pedido </option>
+                                <option value="opcion1">Agrupacion Masculina</option>
+                                <option value="opcion2">Agrupacion Femenina</option>
+                                <option value="opcion3">Agrupacion Milicianos</option>
+                                <option value="opcion4">Departamentos</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Fecha:</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="recurso">Recurso Solicitado:</label>
+                            <select name="nombreAgrupacion" id="nombreAgrupacion" required>
+                                
+                                <option value="">-- Por favor, elige el elemento --</option>
+                                <option value="opcion1">Agrupacion Masculina</option>
+                                <option value="opcion2">Agrupacion Femenina</option>
+                                <option value="opcion3">Agrupacion Milicianos</option>
+                                <option value="opcion4">Departamentos</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="cantidad">Cantidad (opcional):</label>
+                            <input type="number" id="cantidad" name="cantidad" min="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Detalles Adicionales:</label>
+                            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Especifica cualquier detalle importante sobre tu pedido..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-orange">Cargar</button>
+                    </form>
+                </div>
+                <div class="col-6 bg-primary">
+                    <h3 class="text-center mt-4 mb-2 bg-primary-subtle py-2">Card por agrupación</h3>
+            <p class="text-white">Aquí estan los pedidos hechos hasta el momentos de manera temporal</p>
+ <div class="row justify-content-evenly">
+     <div class="col-5 card text-bg-success mb-3 cardAgrupacion" >
+       <div class="card-header">Fecha</div>
+       <div class="card-body">
+         <h5 class="card-title">agrupación masculina</h5>
+         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+       </div>
+     </div>
+     <div class="col-5 card text-bg-warning mb-3 cardAgrupacion" >
+       <div class="card-header">Fecha</div>
+       <div class="card-body">
+         <h5 class="card-title">agrupación femenina</h5>
+         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+       </div>
+     </div>
+     <div class="col-5 card text-bg-danger mb-3 cardAgrupacion" >
+       <div class="card-header">Fecha</div>
+       <div class="card-body">
+         <h5 class="card-title">agrupación milicianos</h5>
+         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+       </div>
+     </div>
+     <div class="col-5 card text-bg-info mb-3 cardAgrupacion" >
+       <div class="card-header">Fecha</div>
+       <div class="card-body">
+         <h5 class="card-title">Departamentos</h5>
+         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+       </div>
+     </div>
+
+ </div>           
+                </div>
+            </div>
+        </section>
+
+        <section id="solicitar" class="solicitar-recursos">
+            <div class="container">
+                <h2>Solicita tus Recursos</h2>
+                <p>Completa el siguiente formulario para enviarnos tu solicitud. Nos pondremos en contacto contigo a la brevedad.</p>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="recurso">Recurso Solicitado:</label>
+                        <input type="text" id="recurso" name="recurso" placeholder="Ej: Material didáctico, insumos, etc." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cantidad">Cantidad (opcional):</label>
+                        <input type="number" id="cantidad" name="cantidad" min="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Detalles Adicionales:</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Especifica cualquier detalle importante sobre tu pedido..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-orange">Enviar Solicitud</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="contacto" class="contacto">
+            <div class="container">
+                <h2>¿Necesitas Ayuda?</h2>
+                <p>Si tienes alguna pregunta, contáctanos</p>
+                <p>Correo: <a href="">rucaAlumine@gmail.com</a></p>
+                <p>Teléfono: +54 9 11 2345-6789 (Ejemplo)</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ruca Aluminé. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlco9tFfQ1K5NfDKT/b2gZgW+1kR6wVwLh0j7p2bO/S" crossorigin="anonymous"></script>
+</body>
+</html>

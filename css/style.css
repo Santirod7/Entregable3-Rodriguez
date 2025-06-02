@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+:root {
+    --orange-primary: #FF7043; 
+    --orange-dark: #E65100;   
+    --gray-text: #333;         
+    --white-text: #fff;        
+    --light-gray-bg: #f8f8f8;  
+}
+
+/* Estilos Generales */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--gray-text);
+    background-color: var(--light-gray-bg);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+
+h1, h2, h3 {
+    color: var(--orange-dark);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--orange-primary);
+}
+
+a:hover {
+    color: var(--orange-dark);
+}
+
+.btn-orange {
+    display: inline-block;
+    background-color: var(--orange-primary);
+    color: var(--white-text);
+    padding: 12px 25px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-orange:hover {
+    background-color: var(--orange-dark);
+}
+
+/* Encabezado */
+header {
+    background-color: var(--orange-primary);
+    color: var(--white-text);
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.Logo{
+    height: 100px;
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; 
+}
+
+header h2 {
+    margin: 0;
+    padding: 0;
+    color: var(--white-text);
+    text-align: left; /* Alineación del título en el encabezado */
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: var(--white-text);
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #ffe0b2; /* Naranja muy claro para hover en la nav */
+}
+
+/* Sección Hero (Inicio) */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1500x600/FF7043/FFFFFF?text=IMAGEN+DE+FONDO+RUCA+ALUMINE') no-repeat center center/cover;
+    color: var(--white-text);
+    text-align: center;
+    padding: 100px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: var(--white-text);
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Sección de Organizador */
+
+.cardAgrupacion{
+    max-width: 18rem;
+}
+
+/* Sección de Solicitud de Recursos */
+.solicitar-recursos, .contacto {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.solicitar-recursos {
+    background-color: var(--white-text);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+}
+
+.solicitar-recursos h2, .contacto h2 {
+    color: var(--orange-primary);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="number"],
+.form-group textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+    box-sizing: border-box; /* Incluye padding y border en el ancho */
+}
+
+.form-group textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+.solicitar-recursos button[type="submit"] {
+    width: auto;
+    padding: 15px 40px;
+    font-size: 1.1em;
+    border: none;
+    cursor: pointer;
+}
+
+/* Sección de Contacto */
+.contacto p {
+    font-size: 1.1em;
+}
+
+/* Pie de Página */
+footer {
+    background-color: var(--gray-text);
+    color: var(--white-text);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul {
+        margin-top: 15px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 5px 0;
+    }
+
+    .hero h2 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .btn-orange {
+        width: 80%; /* Botón más ancho en móvil */
+        max-width: 300px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%; /* Ocupan el ancho completo en móvil */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 0.9em;
+    }
+}
