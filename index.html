@@ -42,73 +42,156 @@
         <section id="solicitar" class="solicitar-recursos">
             <h2>Organizador</h2>
             <p>Completa el siguiente formulario para enviarnos tu solicitud. Nos pondremos en contacto contigo a la brevedad.</p>
-            <div class="row">
-            <div class="row">
-                <div class=" col-6 container bg-secondary-subtle">
+            <div class="row ms-4 me-0">
+            <div class="row justify-content-evenly">
+                <div class=" col-lg-6 col-md-6 col-sm-11 container bg-secondary-subtle">
                     <form action="#" method="POST">
-                        <div class="form-group">
-                            <label for="nombreAgrupacion">Agrupación:</label>
-                            <select name="nombreAgrupacion" id="nombreAgrupacion" required>
-                                
-                                <option value=""> Por favor, elige para quien es el pedido </option>
-                                <option value="opcion1">Agrupacion Masculina</option>
-                                <option value="opcion2">Agrupacion Femenina</option>
-                                <option value="opcion3">Agrupacion Milicianos</option>
-                                <option value="opcion4">Departamentos</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="date">Fecha:</label>
-                            <input type="date" id="date" name="date" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="recurso">Recurso Solicitado:</label>
-                            <select name="nombreAgrupacion" id="nombreAgrupacion" required>
-                                
-                                <option value="">-- Por favor, elige el elemento --</option>
-                                <option value="opcion1">Agrupacion Masculina</option>
-                                <option value="opcion2">Agrupacion Femenina</option>
-                                <option value="opcion3">Agrupacion Milicianos</option>
-                                <option value="opcion4">Departamentos</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="cantidad">Cantidad (opcional):</label>
-                            <input type="number" id="cantidad" name="cantidad" min="1">
-                        </div>
-                        <div class="form-group">
-                            <label for="mensaje">Detalles Adicionales:</label>
-                            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Especifica cualquier detalle importante sobre tu pedido..."></textarea>
+                        <div class="row">
+                            <div class="col-lg-4 col-sm-11 form-group">
+                                <label for="nombreAgrupacion">Agrupación:</label>
+                                <select name="nombreAgrupacion" id="nombreAgrupacion" required>
+                                    
+                                    <option value=""> Para quien </option>
+                                    <option value="opcion1">Agrupacion Masculina</option>
+                                    <option value="opcion2">Agrupacion Femenina</option>
+                                    <option value="opcion3">Agrupacion Milicianos</option>
+                                    <option value="opcion4">Departamentos</option>
+                                </select>
+                            </div>
+                            <div class="col-4 form-group">
+                                <label for="date">Fecha:</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                            <div class="col-10 form-group table-responsive">
+                <table class="table table-bordered table-striped custom-order-table">
+                    <thead class="table-header-orange">
+                        <tr>
+                            <th class="text-center" scope="col">ID</th>
+                            <th scope="col">Recurso</th>
+                            <th scope="col">Cantidad</th>
+                            <th class="text-center" scope="col">ID</th>
+                            <th scope="col">Recurso</th>
+                            <th scope="col">Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center">
+                                <label for="id">1</label>
+                            </td>
+                            <td>
+                                <label for="item_Ollas">Ollas (unidades)</label>
+                            </td>
+                            <td>
+                               Disponibles: 3 <input type="number" class="form-control form-control-sm text-center" id="item_Ollas" name="Ollas" value="0" min="0">
+                            </td>
+                            <td class="text-center">
+                                <label for="id">2</label>
+                            </td>
+                            <td>
+                                <label for="item_Pelotas">Pelotas (unidades)</label>
+                            </td>
+                            <td>
+                               Disponibles: 1 <input type="number" class="form-control form-control-sm text-center" id="item_Pelotas" name="Pelotas" value="0" min="0">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <label for="id">3</label>
+                            </td>
+                            <td>
+                                <label for="item_boligrafos">Escobas (unidades)</label>
+                            </td>
+                            <td>
+                              Disponibles: 5 <input type="number" class="form-control form-control-sm text-center" id="item_boligrafos" name="boligrafos" value="0" min="0">
+                            </td>
+                            <td class="text-center">
+                                <label for="id">4</label>
+                            </td>
+                            <td>
+                                <label for="item_tijeras">Tijeras (unidades)</label>
+                            </td>
+                            <td>
+                               Disponibles: 3 <input type="number" class="form-control form-control-sm text-center" id="item_tijeras" name="tijeras" value="0" min="0">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <label for="id">5</label>
+                            </td>
+                            <td>
+                                <label for="item_Jarras">Jarras (unidades)</label>
+                            </td>
+                            <td>
+                               Disponibles: 8 <input type="number" class="form-control form-control-sm text-center" id="item_Jarras" name="Jarras" value="0" min="0">
+                            </td>
+                            <td class="text-center">
+                                <label for="id">6</label>
+                            </td>
+                            <td>
+                                <label for="item_Vasos">Vasos (unidades)</label>
+                            </td>
+                            <td>
+                               Disponibles: 2 <input type="number" class="form-control form-control-sm text-center" id="item_Vasos" name="Vasos" value="0" min="0">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <label for="id">7</label>
+                            </td>
+                            <td>
+                                <label for="item_platos">platos</label>
+                            </td>
+                            <td>
+                               Disponibles: 8 <input type="number" class="form-control form-control-sm text-center" id="item_platos" name="platos" value="0" min="0">
+                            </td>
+                            <td class="text-center">
+                                <label for="id">8</label>
+                            </td>
+                            <td>
+                                <label for="item_tenedores">tenedores</label>
+                            </td>
+                            <td>
+                               Disponibles: 5 <input type="number" class="form-control form-control-sm text-center" id="item_tenedores" name="tenedores" value="0" min="0">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+                            <div class="col-10 form-group">
+                                <label for="mensaje">Detalles Adicionales:</label>
+                                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Especifica cualquier detalle importante sobre tu pedido..." ></textarea>
+                            </div>
                         </div>
                         <button type="submit" class="btn-orange">Cargar</button>
                     </form>
                 </div>
-                <div class="col-6 bg-primary">
+                <div class="col-lg-6 col-md-6 col-sm-11 bg-primary">
                     <h3 class="text-center mt-4 mb-2 bg-primary-subtle py-2">Card por agrupación</h3>
             <p class="text-white">Aquí estan los pedidos hechos hasta el momentos de manera temporal</p>
  <div class="row justify-content-evenly">
-     <div class="col-5 card text-bg-success mb-3 cardAgrupacion" >
+     <div class="col-lg-5 col-sm-10 card text-bg-success mb-3 cardAgrupacion" >
        <div class="card-header">Fecha</div>
        <div class="card-body">
          <h5 class="card-title">agrupación masculina</h5>
          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
        </div>
      </div>
-     <div class="col-5 card text-bg-warning mb-3 cardAgrupacion" >
+     <div class="col-lg-5 col-sm-10 card text-bg-warning mb-3 cardAgrupacion" >
        <div class="card-header">Fecha</div>
        <div class="card-body">
          <h5 class="card-title">agrupación femenina</h5>
          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
        </div>
      </div>
-     <div class="col-5 card text-bg-danger mb-3 cardAgrupacion" >
+     <div class="col-lg-5 col-sm-10 card text-bg-danger mb-3 cardAgrupacion" >
        <div class="card-header">Fecha</div>
        <div class="card-body">
          <h5 class="card-title">agrupación milicianos</h5>
          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
        </div>
      </div>
-     <div class="col-5 card text-bg-info mb-3 cardAgrupacion" >
+     <div class="col-lg-5 col-sm-10 card text-bg-info mb-3 cardAgrupacion" >
        <div class="card-header">Fecha</div>
        <div class="card-body">
          <h5 class="card-title">Departamentos</h5>
@@ -121,33 +204,22 @@
             </div>
         </section>
 
-        <section id="solicitar" class="solicitar-recursos">
+        <section id="solicitar" class="solicitar-recursos bg-warning-subtle">
             <div class="container">
-                <h2>Solicita tus Recursos</h2>
-                <p>Completa el siguiente formulario para enviarnos tu solicitud. Nos pondremos en contacto contigo a la brevedad.</p>
-                <form action="#" method="POST">
-                    <div class="form-group">
-                        <label for="nombre">Nombre Completo:</label>
-                        <input type="text" id="nombre" name="nombre" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Correo Electrónico:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="recurso">Recurso Solicitado:</label>
-                        <input type="text" id="recurso" name="recurso" placeholder="Ej: Material didáctico, insumos, etc." required>
-                    </div>
-                    <div class="form-group">
-                        <label for="cantidad">Cantidad (opcional):</label>
-                        <input type="number" id="cantidad" name="cantidad" min="1">
-                    </div>
-                    <div class="form-group">
-                        <label for="mensaje">Detalles Adicionales:</label>
-                        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Especifica cualquier detalle importante sobre tu pedido..."></textarea>
-                    </div>
-                    <button type="submit" class="btn-orange">Enviar Solicitud</button>
-                </form>
+                <h2 class="mb-5">Stock</h2>
+ 
+<table class="table table-bordered table-striped custom-order-table">
+                    <thead class="table-header-orange">
+                        <tr>
+                            <th scope="col">Elemento</th>
+                            <th scope="col">Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaElementos">
+                    </tbody>
+                </table>
+                               <button type="button" class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#agregarElemento">
+  Agregar elementos </button>
             </div>
         </section>
 
@@ -161,11 +233,42 @@
         </section>
     </main>
 
+<div class="modal fade" id="agregarElemento" tabindex="-1" aria-labelledby="agregarElemento2" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="agregarElemento2">Agregar elemento</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="agregaElementoForm">
+            <div class="form-group">
+                        <label for="elementoId">Identificador:</label>
+                        <input type="number" id="elementoId" name="cantidad" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre">Nombre del elemento: </label>
+                        <input type="text" id="nombreElemento" name="nombre" maxlength="20" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cantidad">Cantidad actual:</label>
+                        <input type="number" id="cantidad" name="cantidad" min="1" required>
+                    </div>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit"   class="btn btn-success">Agregar </button>
+                </form>
+      </div>
+    </div>
+  </div>
+</div>
+
     <footer>
         <div class="container">
             <p>&copy; 2025 Ruca Aluminé. Todos los derechos reservados.</p>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlco9tFfQ1K5NfDKT/b2gZgW+1kR6wVwLh0j7p2bO/S" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js" integrity="sha384-RuyvpeZCxMJCqVUGFI0Do1mQrods/hhxYlcVfGPOfQtPJh0JCw12tUAZ/Mv10S7D" crossorigin="anonymous"></script>
+    <script src="./js/index.js" ></script>
 </body>
 </html>
