@@ -1,11 +1,13 @@
 class Pedidos {
-    constructor(id, nombreAgrupacion, fecha, elemento, cantidad, descripcionPedido) {
+    constructor(id, nombreAgrupacion, fecha, horainicio,horafin, elemento , cantidad, descripcionPedido) {
         this.id = id;
         this.nombreAgrupacion = nombreAgrupacion;
+        this.horainicio = horainicio;
+        this.horafin = horafin;
         this.fecha = fecha;
+        this.descripcionPedido = descripcionPedido;
         this.elemento = elemento;
         this.cantidad = cantidad;
-        this.descripcionPedido = descripcionPedido;
     }
     }
 
@@ -35,11 +37,15 @@ detergente = new Elemento(6,"detergente",3),
 tijera = new Elemento(7,"tijera",4), 
 pala = new Elemento(8,"pala",1,) ];
 
-console.log(listadoElementos[0].elementoId)
-const elementos = cargarElementos();
+const pedidoHecho = []
+guardarElemento(listadoElementos)
 
 function guardarElemento(elementos) {
-    localStorage.setItem('Elementos', JSON.stringify(elementos.forEach(elemento => elemento.toJSON())));
+    localStorage.setItem('Elementos', JSON.stringify(elementos.map(elemento => elemento.toJSON())));
+}
+function getElementoPedidos() {
+   let  listadoElementos = JSON.parse(localStorage.getItem('Elementos'))
+    return listadoElementos.map(recurso=> recurso.id)
 }
 
 function cargarElementos() {
@@ -54,31 +60,29 @@ function cargarElementos() {
     }
     return [];
 }
+
+const elementos = cargarElementos();
     agregaElementoForm.onsubmit = function (event) {
         event.preventDefault();
-        console.log(elementoId.value)
+       const elementoId = document.getElementById('elementoId')
                 const nuevoElemento = new Elemento(
             parseInt(elementoId.value),
             nombreElemento.value,
-            parseInt(elementoId.value),
+            parseInt(cantidad.value),
             )
-    listadoElementos.push(nuevoElemento)
-console.log(listadoElementos)
-guardarElemento(listadoElementos)
+ listadoElementos.push(nuevoElemento)
+ guardarElemento(listadoElementos)
 cargarElementos()
 renderizarTabla()
+renderizarElementos()
+this.reset()
 }
-listadoElementos.forEach(function(numero) {
-        console.log(numero)})
   
-
     function renderizarTabla() {
       let  listadoElementos = JSON.parse(localStorage.getItem('Elementos'))
-      console.log(listadoElementos)
     const tbody = document.getElementById('tablaElementos');
     tbody.innerHTML = '';
     listadoElementos.forEach(function(Elemento) {
-        console.log(Elemento)
         const fila = document.createElement('tr');
         fila.innerHTML = `
             <td>${Elemento.nombreElemento}</td>
@@ -86,6 +90,104 @@ listadoElementos.forEach(function(numero) {
         `;
          tbody.appendChild(fila)
     }); }
+
+    function renderizarElementos(Elementos) {
+    const busquedaElemento = document.getElementById('selecElementos');
+    busquedaElemento.innerHTML = '';
+    Elementos.forEach(function(Elemento) {
+        const panel = document.createElement('div');
+        panel.className = 'col-lg-3 col-5 mx-1 card border-success mb-3'
+        panel.innerHTML = `
+          <div class=" card-header text-center px-0 bg-transparent border-success"><h5>${Elemento.nombreElemento}</h5></div>
+  <div class="card-body p-0 text-success">
+    <p class="card-text my-0 text-center">Cantidad</p>
+    <p class="card-text my-0 text-center" id='cant'>${Elemento.cantidad}</p>
+  </div>
+  <div class="card-footer d-flex justify-content-center bg-transparent border-success">
+  <button class="btn btn-success" id="${Elemento.elementoId}" >Cargar</button>
+  </div>
+        `;
+         busquedaElemento.appendChild(panel)
+    }); }
+renderizarElementos(listadoElementos)
+
 renderizarTabla()
 
 
+const elementoBusqueda = document.getElementById("busquedaElemento")
+
+function handleSearch() {
+    const query = document.getElementById("busquedaElemento").value.toLowerCase();
+    const filtroElementos = listadoElementos.filter(listadoElementos => listadoElementos.nombreElemento.toLowerCase().startsWith(query));
+    renderizarElementos(filtroElementos)
+}
+
+function resultados(listadoElementos) {
+   listadoElementos.forEach(function(Elemento) {
+        const fila = document.createElement('tr');
+        fila.innerHTML = `
+            <td>${Elemento.nombreElemento}</td>
+            <td>${Elemento.cantidad}</td>   
+        `;
+         tbody.appendChild(fila)
+    })
+}
+elementoBusqueda.addEventListener("input", handleSearch);
+
+const listaPedidos = document.querySelector("#modalBusqueda")
+const contenidoPedidos = document.querySelector("#contenidoPedidos")
+let objetosPedidos = [];
+
+document.addEventListener('DOMContentLoaded', function(){
+eventListener()
+})
+
+function eventListener(){
+listaPedidos.addEventListener('click', getElementosPedidos)
+}
+
+function getElementosPedidos(e){
+    if(e.target.classList.contains('btn-success')){
+     const pedidoHtml = e.target.parentElement.parentElement
+     cargarPedido(pedidoHtml)
+    }
+}
+
+function cargarPedido(elemento){
+const datosElemento = {
+    objeto: elemento.querySelector('h5').textContent,
+    cantidad: parseInt(elemento.querySelector('#cant').textContent)
+}
+ objetosPedidos = [...objetosPedidos,datosElemento]
+renderizarElementosPedidos()
+}
+
+function renderizarElementosPedidos(){
+limpiarPedidos()
+    objetosPedidos.forEach(function(pedido) {
+        const panel = document.createElement('div');
+        panel.className = 'col-lg-3 col-5 mx-1 card border-success mb-3'
+        panel.innerHTML = `
+          <div class=" card-header text-center px-0 bg-transparent border-success"><h5>${pedido.objeto}</h5></div>
+  <div class="card-body p-0 text-success">
+    <p class="card-text my-0 text-center">Cantidad</p>
+    <p class="card-text my-0 text-center" id='cant'>${pedido.cantidad}</p>
+    <input type="number"
+          class="form-control mb-2"
+          placeholder="¿Cuantos necesita?"
+        />
+  </div>
+        `;
+         contenidoPedidos.appendChild(panel)
+    })
+}
+
+function limpiarPedidos(){
+contenidoPedidos.innerHTML = ''
+}
+
+// A terminar el cargado de pedidos, no llego con los tiempos y prefieron encargarme de las peticiones a API :)
+    enviarPedidoForm.onsubmit = function (event) {
+        event.preventDefault();
+       
+}

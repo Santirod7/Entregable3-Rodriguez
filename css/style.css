@@ -1,4 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
+
+/* Estilo de letras */
+.limelight-regular {
+  font-family: "Limelight", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lavishly-yours-regular {
+  font-family: "Lavishly Yours", cursive;
+  font-weight: 600;
+  font-style: normal;
+  font-size: xx-large;
+}
+
+main { 
+flex-grow: 1;
+width: 100%;
+background-image: url(../img/fondo.JPG);
+background-attachment: fixed;
+background-position: 50% 50%;
+background-size: cover;
+}
 
 :root {
     --orange-primary: #FF7043; 
@@ -10,6 +34,9 @@
 
 /* Estilos Generales */
 body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
@@ -110,7 +137,7 @@ header nav ul li a:hover {
     text-align: center;
     padding: 100px 20px;
     display: flex;
-    align-items: center;
+    align-items: end;
     justify-content: center;
     min-height: 500px;
 }
@@ -175,7 +202,7 @@ header nav ul li a:hover {
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 1em;
-    box-sizing: border-box; /* Incluye padding y border en el ancho */
+    box-sizing: border-box;
 }
 
 .form-group textarea {
@@ -191,6 +218,9 @@ header nav ul li a:hover {
 }
 
 /* Sección de Contacto */
+.fondoContacto{
+    background: #ff7d04;
+}
 .contacto p {
     font-size: 1.1em;
 }
@@ -201,7 +231,6 @@ footer {
     color: var(--white-text);
     text-align: center;
     padding: 20px 0;
-    margin-top: 40px;
 }
 
 footer p {
