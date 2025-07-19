@@ -186,7 +186,7 @@ function limpiarPedidos(){
 contenidoPedidos.innerHTML = ''
 }
 
-// A terminar el cargado de pedidos, no llego con los tiempos y prefieron encargarme de las peticiones a API :)
+
     enviarPedidoForm.onsubmit = function (event) {
         event.preventDefault();
        
